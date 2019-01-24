@@ -25,21 +25,21 @@ public class Fraction {
 			whole = Integer.parseInt(operand);
 		}
 	}
-	public Fraction calculation(Fraction Second, String operator) {
+	public Fraction calculation(Fraction SecondFrac, String operator) {
 		this.toImproperFrac();
-		Second.toImproperFrac();
+		SecondFrac.toImproperFrac();
 		Fraction answer;
 		if (operator.contains("+")) {
-			answer = addition(Second);
+			answer = addition(SecondFrac);
 		} else {
 			if (operator.contains("-")) {
-				answer = subtraction(Second);
+				answer = subtraction(SecondFrac);
 			} else {
 				if (operator.contains("*")) {
-					answer = multiplication(Second);
+					answer = multiplication(SecondFrac);
 				} else {
 					if (operator.contains("/")) {
-						answer = division(Second);
+						answer = division(SecondFrac);
 					} else {
 						throw new IllegalArgumentException ("Not a correct operator");
 					}
@@ -49,27 +49,27 @@ public class Fraction {
 		answer.reduce();
 		return answer;
 	}
-	private Fraction addition(Fraction Second) {
-		int num = this.numerator * Second.denominator + Second.numerator*this.denominator;
-		int denom = this.denominator * Second.denominator;
+	private Fraction addition(Fraction SecondFrac) {
+		int num = this.numerator * SecondFrac.denominator + SecondFrac.numerator*this.denominator;
+		int denom = this.denominator * SecondFrac.denominator;
 		Fraction answer = new Fraction(0, num, denom);
 		return answer;
 	}
-	private Fraction subtraction(Fraction Second) {
-		int num = this.numerator * Second.denominator - Second.numerator*this.denominator;
-		int denom = this.denominator * Second.denominator;
+	private Fraction subtraction(Fraction SecondFrac) {
+		int num = this.numerator * SecondFrac.denominator - SecondFrac.numerator*this.denominator;
+		int denom = this.denominator * SecondFrac.denominator;
 		Fraction answer = new Fraction(0, num, denom);
 		return answer;
 	}
-	private Fraction multiplication(Fraction Second) {
-		int num = this.numerator * Second.numerator;
-		int denom = this.denominator * Second.denominator;
+	private Fraction multiplication(Fraction SecondFrac) {
+		int num = this.numerator * SecondFrac.numerator;
+		int denom = this.denominator * SecondFrac.denominator;
 		Fraction answer = new Fraction(0, num, denom);
 		return answer;
 	}
-	private Fraction division(Fraction Second) {
-		int num = this.numerator * Second.denominator;
-		int denom = this.denominator * Second.numerator;
+	private Fraction division(Fraction SecondFrac) {
+		int num = this.numerator * SecondFrac.denominator;
+		int denom = this.denominator * SecondFrac.numerator;
 		Fraction answer = new Fraction(0, num, denom);
 		return answer;
 	}
