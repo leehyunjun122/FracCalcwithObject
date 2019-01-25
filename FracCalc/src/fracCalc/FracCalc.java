@@ -27,19 +27,17 @@ public class FracCalc {
     {
         // TODO: Implement this function to produce the solution to the input
     	//separates the string into fraction1, fraction2, operator
-    	String fraction1 = input.substring(0, input.indexOf(" "));
-        String operator = input.substring((input.indexOf(" ")), (input.indexOf(" ")+ 3));
-        String fraction2 = input.substring(input.lastIndexOf(" ") + 1);
-        int[] frac1 = Fraction(fraction1);
-        int[] frac2 = parseFrac(fraction2);
-        //store the final calculated fraction into the variable named result
-    	int[] result = new int [3];
-    	//does the calculation based on the types of the operators: +, -, *, /
-    	result = Fraction.Calculation(frac1,frac2,operator);
-    	result = reduceFrac(result);//reduce
-    	return fracForm(result);
-        return "";
-    }
+    	String[] parsedInput = input.split(" ");
+		if (parsedInput.length%2==0||parsedInput.length==1) {
+			return "ERROR: Invalid expression. Please try again.";
+		}
+		Fraction fraction1 = new Fraction(parsedInput[0]);
+		Fraction fraction2 = new Fraction(parsedInput[2]);
+		String operator = parsedInput[1];
+		Fraction answer = fraction1.calculation(fraction2, operator);
+		String result = answer.toString();
+		return result;
+	}
 
     // TODO: Fill in the space below with any helper methods that you think you will need
     

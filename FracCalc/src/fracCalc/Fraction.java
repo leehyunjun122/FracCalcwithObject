@@ -1,7 +1,7 @@
 package fracCalc;
 
 public class Fraction {
-	private int numerator = 0;
+	private int numerator = 0;//all the values initially put as zero
 	private int denominator = 1;//zero cannot be the denominator
 	private int whole = 0;
 	
@@ -13,16 +13,16 @@ public class Fraction {
 		this.numerator = numerator;
 		this.denominator = denominator;
 	}
-	private void parseFrac(String operand) {
-		if (operand.contains("/") && operand.contains("_")) {
-			numerator = (Integer.parseInt(operand.split("_")[1].split("/")[0]));
-			denominator = (Integer.parseInt(operand.split("/")[1]));
-			whole = (Integer.parseInt(operand.split("_")[0]));
-		} else if (operand.contains("/") && !(operand.contains("_"))) {
-			numerator = (Integer.parseInt(operand.split("/")[0]));
-			denominator = (Integer.parseInt(operand.split("/")[1]));
+	private void parseFrac(String frac) {
+		if (frac.contains("/") && frac.contains("_")) {
+			numerator = (Integer.parseInt(frac.split("_")[1].split("/")[0]));
+			denominator = (Integer.parseInt(frac.split("/")[1]));
+			whole = (Integer.parseInt(frac.split("_")[0]));
+		} else if (frac.contains("/") && !(frac.contains("_"))) {
+			numerator = (Integer.parseInt(frac.split("/")[0]));
+			denominator = (Integer.parseInt(frac.split("/")[1]));
 		} else {
-			whole = Integer.parseInt(operand);
+			whole = Integer.parseInt(frac);
 		}
 	}
 	public Fraction calculation(Fraction SecondFrac, String operator) {
@@ -49,6 +49,7 @@ public class Fraction {
 		answer.reduce();
 		return answer;
 	}
+	//all of the calculation method gets the second fraction to solve with the first fraction that was stored into the instance variables
 	private Fraction addition(Fraction SecondFrac) {
 		int num = this.numerator * SecondFrac.denominator + SecondFrac.numerator*this.denominator;
 		int denom = this.denominator * SecondFrac.denominator;
