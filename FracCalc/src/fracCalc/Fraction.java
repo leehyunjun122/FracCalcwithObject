@@ -14,18 +14,18 @@ public class Fraction {
 		this.denominator = denominator;
 	}
 	private void parseFrac(String frac) {
-		if (frac.contains("/") && frac.contains("_")) {
+		if (frac.contains("/") && frac.contains("_")) {//when it contains whole fraction (whole, numerator, denominator)
 			numerator = (Integer.parseInt(frac.split("_")[1].split("/")[0]));
 			denominator = (Integer.parseInt(frac.split("/")[1]));
 			whole = (Integer.parseInt(frac.split("_")[0]));
-		} else if (frac.contains("/") && !(frac.contains("_"))) {
+		} else if (frac.contains("/") && !(frac.contains("_"))) {//when it only contains numerator and denominator
 			numerator = (Integer.parseInt(frac.split("/")[0]));
 			denominator = (Integer.parseInt(frac.split("/")[1]));
-		} else {
+		} else {//when it only contains whole number
 			whole = Integer.parseInt(frac);
 		}
 	}
-	public Fraction calculation(Fraction SecondFrac, String operator) {
+	public Fraction calculation(Fraction SecondFrac, String operator) {//gets the second frac in order to calculate with the first frac that was already stored into the instance variables
 		this.toImproperFrac();
 		SecondFrac.toImproperFrac();
 		Fraction answer;
@@ -53,7 +53,7 @@ public class Fraction {
 	private Fraction addition(Fraction SecondFrac) {
 		int num = this.numerator * SecondFrac.denominator + SecondFrac.numerator*this.denominator;
 		int denom = this.denominator * SecondFrac.denominator;
-		Fraction answer = new Fraction(0, num, denom);
+		Fraction answer = new Fraction(0, num, denom);//stores the final answer into the instance variable using the constructor
 		return answer;
 	}
 	private Fraction subtraction(Fraction SecondFrac) {
@@ -97,13 +97,13 @@ public class Fraction {
 		denominator /= gcf;
     }
 	public String toString() {
-		if (this.numerator==0) {
+		if (this.numerator==0) {//when it only contains whole number
 			return ""+ whole;
 		} 
-		if (this.whole==0) {
+		if (this.whole==0) {//when it only contains numerator and denominator
 			return "" + numerator + "/" + denominator;
 		}
-		return "" + whole +"_" + numerator + "/" + denominator;
+		return "" + whole +"_" + numerator + "/" + denominator;//when it contains every component of fraction (whole, numerator, denominator)
 	}
 	//Calculates the greatest common factor of two integers
     public static int gcf(int numerator, int denominator) {
