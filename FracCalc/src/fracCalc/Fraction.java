@@ -105,7 +105,7 @@ public class Fraction {
 		}
 		return "" + whole +"_" + numerator + "/" + denominator;
 	}
-  //Calculates the greatest common factor of two integers
+	//Calculates the greatest common factor of two integers
     public static int gcf(int numerator, int denominator) {
     	int gcf = 1; // Set the initial value of gcf to 1, which is the lowest possible gcf
 		int count; // Set it to whichever number is larger.
