@@ -6,13 +6,17 @@ public class FracCalc {
 	static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
         // TODO: Read the input from the user and call produceAnswer with an equation
-    	while (!input.equals("quit")) {
+    	boolean done = false;
+    	while (!done) {
     		System.out.println("Type in the calculation (Type \"quit\" to end)");
     		String expression = input.nextLine();
     		if (!expression.toLowerCase().contains("quit")) {
     			System.out.println(produceAnswer(expression));
+    		} else {
+    			done = true;
     		}
     	}
+    	System.out.println("¡Olé!");
     }
     
     // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
