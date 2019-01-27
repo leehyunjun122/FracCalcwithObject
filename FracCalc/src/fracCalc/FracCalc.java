@@ -16,9 +16,7 @@ public class FracCalc {
     			done = true;
     		}
     	}
-    	System.out.println("¡Olé!");
     }
-    
     // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
     // This function takes a String 'input' and produces the result
     //
@@ -27,8 +25,7 @@ public class FracCalc {
     //        
     // The function should return the result of the fraction after it has been calculated
     //      e.g. return ==> "1_1/4"
-    public static String produceAnswer(String input)
-    {
+    public static String produceAnswer(String input) {
         // TODO: Implement this function to produce the solution to the input
     	//separates the string into fraction1, fraction2, operator
     	String[] parsedInput = input.split(" ");
@@ -42,7 +39,5 @@ public class FracCalc {
 		String result = answer.toString();
 		return result;
 	}
-
-    // TODO: Fill in the space below with any helper methods that you think you will need
-    
+    // TODO: Fill in the space below with any helper methods that you think you will need 
 }

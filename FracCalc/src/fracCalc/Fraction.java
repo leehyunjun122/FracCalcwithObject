@@ -53,7 +53,7 @@ public class Fraction {
 	private Fraction addition(Fraction SecondFrac) {
 		int num = this.numerator * SecondFrac.denominator + SecondFrac.numerator*this.denominator;
 		int denom = this.denominator * SecondFrac.denominator;
-		Fraction answer = new Fraction(0, num, denom);//stores the final answer into the instance variable using the constructor
+		Fraction answer = new Fraction(0, num, denom);//stores the final answer into the instance variable
 		return answer;
 	}
 	private Fraction subtraction(Fraction SecondFrac) {
