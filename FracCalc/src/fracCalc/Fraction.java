@@ -29,7 +29,7 @@ public class Fraction {
 		this.toImproperFrac();
 		SecondFrac.toImproperFrac();
 		Fraction answer;
-		if (operator.contains("+")) {
+		if (operator.contains("+")) {//based on the operator, fractions get calculated
 			answer = addition(SecondFrac);
 		} else {
 			if (operator.contains("-")) {
