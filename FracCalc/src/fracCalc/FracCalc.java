@@ -16,6 +16,7 @@ public class FracCalc {
     			done = true;
     		}
     	}
+    	System.out.println("¡Olé!");
     }
     // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
     // This function takes a String 'input' and produces the result
