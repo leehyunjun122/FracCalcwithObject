@@ -1,5 +1,10 @@
 package fracCalc;
 
+/*This class contains the constructor, field, and methods for the FracCalc.
+ * @author Alex Lee
+ * @versions January 22, 2019
+ */
+
 public class Fraction {
 	private int numerator = 0;//all the values initially put as zero
 	private int denominator = 1;//zero cannot be the denominator

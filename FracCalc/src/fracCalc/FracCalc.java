@@ -2,6 +2,11 @@ package fracCalc;
 
 import java.util.Scanner;
 
+/*This class is client code that uses the Fraction to perform various fraction calculation.
+ * @author Alex Lee
+ * @versions January 22, 2019
+ */
+
 public class FracCalc {
 	static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
@@ -16,7 +21,6 @@ public class FracCalc {
     			done = true;
     		}
     	}
-    	System.out.println("¡Olé!");
     }
     // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
     // This function takes a String 'input' and produces the result
